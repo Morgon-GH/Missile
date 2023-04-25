@@ -27,7 +27,7 @@ public class SpawnMissile implements CommandExecutor {
 
             } else if (strings.length == 3) {
                 try {
-                    Location location = new Location(p.getWorld(), parseDouble(strings[0]), parseDouble(strings[1]), parseDouble(strings[2]));
+                    Location location = new Location(p.getWorld(), parseDouble(strings[0]) + 0.5, parseDouble(strings[1]) + 0.5, parseDouble(strings[2]) + 0.5);
                     missile.summon(p, location);
                 } catch (Exception e) {
                     message.WrongInputTypeError(p);

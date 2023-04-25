@@ -23,10 +23,12 @@ public class Missile {
         missileTM.setCustomModelData(1);
         missileT.setItemMeta(missileTM);
 
+        missile.addScoreboardTag("missile");
         missile.setInvisible(true);
         missile.setBasePlate(false);
         missile.setMarker(true);
         missile.setInvulnerable(true);
+        missile.setSmall(false);
         missile.setRightArmPose(angle);
         missile.setItem(EquipmentSlot.HAND, missileT);
     }
