@@ -8,10 +8,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.util.EulerAngle;
 
 public class Missile {
 
     public void summon(Player player, Location location){
+
+        EulerAngle angle = new EulerAngle(0, 0, 0);
+
         ArmorStand missile = (ArmorStand) player.getWorld().spawnEntity(location, EntityType.ARMOR_STAND);
 
         ItemStack missileT = new ItemStack(Material.PAPER);     //missileTexture
@@ -21,10 +25,10 @@ public class Missile {
 
         missile.setInvisible(true);
         missile.setBasePlate(false);
-        missile.setSmall(true);
         missile.setMarker(true);
         missile.setInvulnerable(true);
-        missile.setItem(EquipmentSlot.HEAD, missileT);
+        missile.setRightArmPose(angle);
+        missile.setItem(EquipmentSlot.HAND, missileT);
     }
 
 }
