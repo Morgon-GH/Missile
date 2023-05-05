@@ -26,11 +26,9 @@ public class Missile {
         missile.addScoreboardTag("missile");
         missile.setInvisible(true);
         missile.setBasePlate(false);
-        missile.setMarker(true);
         missile.setInvulnerable(true);
         missile.setSmall(false);
         missile.setRightArmPose(angle);
         missile.setItem(EquipmentSlot.HAND, missileT);
     }
-
 }

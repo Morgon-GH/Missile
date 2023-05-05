@@ -1,6 +1,8 @@
 package de.morgon.missile;
 
 import de.morgon.missile.commands.*;
+import de.morgon.missile.events.InteractMissile;
+import de.morgon.missile.events.InventoryEvents.MissileInvClickEvent;
 import de.morgon.missile.events.UseMissileItem;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -22,6 +24,8 @@ public final class main extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         pluginManager.registerEvents(new UseMissileItem(), this);
+        pluginManager.registerEvents(new InteractMissile(), this);
+        pluginManager.registerEvents(new MissileInvClickEvent(), this);
     }
 
     @Override
