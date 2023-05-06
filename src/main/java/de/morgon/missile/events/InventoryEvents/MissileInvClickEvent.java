@@ -29,7 +29,7 @@ public class MissileInvClickEvent implements Listener {
                 ItemStack missileItem = new ItemStack(Material.PAPER);
                 ItemMeta missileItemM = missileItem.getItemMeta();
                 missileItemM.setCustomModelData(2);
-                missileItemM.setDisplayName("Missile");
+                missileItemM.setDisplayName("§oMissile");
                 missileItem.setItemMeta(missileItemM);
 
                 missile.remove();

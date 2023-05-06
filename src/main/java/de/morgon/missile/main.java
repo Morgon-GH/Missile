@@ -4,7 +4,9 @@ import de.morgon.missile.commands.*;
 import de.morgon.missile.events.InteractMissile;
 import de.morgon.missile.events.InventoryEvents.MissileInvClickEvent;
 import de.morgon.missile.events.UseMissileItem;
+import de.morgon.missile.recipes.MissileRecipe;
 import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,6 +28,16 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new UseMissileItem(), this);
         pluginManager.registerEvents(new InteractMissile(), this);
         pluginManager.registerEvents(new MissileInvClickEvent(), this);
+
+        System.out.println("Listeners loaded successfully");
+
+        System.out.println("Loading Recipes");
+
+        NamespacedKey keyMissile = new NamespacedKey(this, "missile");
+        MissileRecipe.register(keyMissile);
+
+        System.out.println("Recipes loaded successfully");
+
     }
 
     @Override
