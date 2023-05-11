@@ -17,14 +17,12 @@ public class SpawnMissile implements CommandExecutor {
 
         Message message = new Message();
         Missile missile = new Missile();
-
+        
         if(commandSender instanceof Player){
             Player p = (Player) commandSender;
 
             if(strings.length == 0) {
-
                 missile.summon(p, p.getLocation());
-
             } else if (strings.length == 3) {
                 try {
                     Location location = new Location(p.getWorld(), parseDouble(strings[0]) + 0.5, parseDouble(strings[1]) + 0.5, parseDouble(strings[2]) + 0.5);
@@ -33,7 +31,6 @@ public class SpawnMissile implements CommandExecutor {
                     message.WrongInputTypeError(p);
                 }
             }
-
         }else message.ConsoleCantExecuteError(commandSender);
         return false;
     }

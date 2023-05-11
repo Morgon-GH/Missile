@@ -13,7 +13,8 @@ public class UseMissileItem implements Listener {
 
     @EventHandler
     public void onUseMissile(PlayerInteractEvent e){
-        if(Objects.requireNonNull(e.getItem()).getType() == Material.PAPER && e.getItem().getItemMeta().getCustomModelData() == 2){
+
+        if (e.getItem().getType() == Material.PAPER && e.getItem().getItemMeta().getCustomModelData() == 2){
 
             Player p = e.getPlayer();
 
@@ -28,5 +29,4 @@ public class UseMissileItem implements Listener {
             p.getInventory().getItemInMainHand().setAmount(amount - 1);
         }
     }
-
 }

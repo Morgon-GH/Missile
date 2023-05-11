@@ -1,7 +1,7 @@
 package de.morgon.missile.events.InventoryEvents;
 
 import de.morgon.missile.PlayerEntityMap;
-import de.morgon.missile.events.InventoryHolder.MenuHolder1;
+import de.morgon.missile.events.MenuHolder1;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

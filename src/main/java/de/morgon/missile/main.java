@@ -11,32 +11,34 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        System.out.println("Starting up plugin");
+        Logger logger = Bukkit.getLogger();
+        logger.info("[Missile] Starting up plugin");
 
-        System.out.println("Loading commands...");
+        logger.info("[Missile] Loading commands...");
         Objects.requireNonNull(getCommand("SpawnMissile")).setExecutor(new SpawnMissile());
-        System.out.println("Commands loaded successfully");
+        logger.info("[Missile] Commands loaded successfully");
 
-        System.out.println("Loading Event listeners");
+        logger.info("[Missile] Loading Event listeners");
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         pluginManager.registerEvents(new UseMissileItem(), this);
         pluginManager.registerEvents(new InteractMissile(), this);
         pluginManager.registerEvents(new MissileInvClickEvent(), this);
 
-        System.out.println("Listeners loaded successfully");
+        logger.info("[Missile] Listeners loaded successfully");
 
-        System.out.println("Loading Recipes");
+        logger.info("[Missile] Loading Recipes");
 
         NamespacedKey keyMissile = new NamespacedKey(this, "missile");
         MissileRecipe.register(keyMissile);
 
-        System.out.println("Recipes loaded successfully");
+        logger.info("[Missile] Recipes loaded successfully");
 
     }
 
