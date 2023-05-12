@@ -48,6 +48,11 @@ public class InteractMissile implements Listener {
             ItemMeta targetM = target.getItemMeta();
             targetM.setDisplayName("Set target");
             target.setItemMeta(targetM);
+            
+            ItemStack power = new ItemStack(Material.GUNPOWDER);
+            ItemMeta powerM = power.getItemMeta();
+            powerM.setDisplayName("Load Gunpowder");
+            power.setItemMeta(powerM);
 
             for(int i = 0; i < 10; i++){
                 missileI1.setItem( i, clear);
@@ -61,7 +66,7 @@ public class InteractMissile implements Listener {
 
             missileI1.setItem(13, clear);
 
-
+            missileI1.setItem(14, power);
 
             missileI1.setItem(15, clear);
 
