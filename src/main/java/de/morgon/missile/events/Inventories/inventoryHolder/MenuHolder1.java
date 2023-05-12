@@ -1,4 +1,4 @@
-package de.morgon.missile.events;
+package de.morgon.missile.events.Inventories.inventoryHolder;
 
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;

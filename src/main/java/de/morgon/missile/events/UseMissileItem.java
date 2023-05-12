@@ -11,22 +11,27 @@ import java.util.Objects;
 
 public class UseMissileItem implements Listener {
 
+
     @EventHandler
     public void onUseMissile(PlayerInteractEvent e){
 
-        if (e.getItem().getType() == Material.PAPER && e.getItem().getItemMeta().getCustomModelData() == 2){
+        try {
+            if (e.getItem().getType() == Material.PAPER && e.getItem().getItemMeta().getCustomModelData() == 2) {
 
-            Player p = e.getPlayer();
+                Player p = e.getPlayer();
 
-            Location location = Objects.requireNonNull(e.getClickedBlock()).getLocation();
-            double X = location.getX();
-            double Y = location.getY() + 0.5;
-            double Z = location.getZ();
+                Location location = Objects.requireNonNull(e.getClickedBlock()).getLocation();
+                double X = location.getX();
+                double Y = location.getY() + 0.5;
+                double Z = location.getZ();
 
-            p.performCommand("spawnmissile " + X + " " + Y + " " + Z);
+                p.performCommand("spawnmissile " + X + " " + Y + " " + Z);
 
-            int amount = p.getInventory().getItemInMainHand().getAmount();
-            p.getInventory().getItemInMainHand().setAmount(amount - 1);
+                int amount = p.getInventory().getItemInMainHand().getAmount();
+                p.getInventory().getItemInMainHand().setAmount(amount - 1);
+            }
+        }catch (Exception exception){
+            return;
         }
     }
 }

@@ -2,7 +2,8 @@ package de.morgon.missile;
 
 import de.morgon.missile.commands.*;
 import de.morgon.missile.events.InteractMissile;
-import de.morgon.missile.events.InventoryEvents.MissileInvClickEvent;
+import de.morgon.missile.events.Inventories.events.MissileI1Event;
+import de.morgon.missile.events.Inventories.events.MissileI2Event;
 import de.morgon.missile.events.UseMissileItem;
 import de.morgon.missile.recipes.MissileRecipe;
 import org.bukkit.Bukkit;
@@ -29,7 +30,8 @@ public final class main extends JavaPlugin {
 
         pluginManager.registerEvents(new UseMissileItem(), this);
         pluginManager.registerEvents(new InteractMissile(), this);
-        pluginManager.registerEvents(new MissileInvClickEvent(), this);
+        pluginManager.registerEvents(new MissileI1Event(), this);
+        pluginManager.registerEvents(new MissileI2Event(), this);
 
         logger.info("[Missile] Listeners loaded successfully");
 
