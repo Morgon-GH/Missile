@@ -39,7 +39,8 @@ public class MissileInvClickEvent implements Listener {
                 PlayerEntityMap.remove(p);
             }else if(e.getCurrentItem().getType() == Material.GUNPOWDER){
                 
-                
+                Inventory power = Bukkit.createInventory(new MenuHolder2(), 9, "Load Missile");
+                e.getPlayer().openInventory(power);
                 
             }
 
