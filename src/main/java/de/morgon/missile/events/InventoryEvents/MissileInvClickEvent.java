@@ -37,8 +37,11 @@ public class MissileInvClickEvent implements Listener {
                 p.closeInventory();
 
                 PlayerEntityMap.remove(p);
+            }else if(e.getCurrentItem().getType() == Material.GUNPOWDER){
+                
+                
+                
             }
-
 
         }
 
