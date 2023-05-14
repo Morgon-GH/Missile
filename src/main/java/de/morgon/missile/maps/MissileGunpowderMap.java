@@ -1,4 +1,4 @@
-package de.morgon.missile.HashMaps;
+package de.morgon.missile.maps;
 
 import org.bukkit.entity.Entity;
 

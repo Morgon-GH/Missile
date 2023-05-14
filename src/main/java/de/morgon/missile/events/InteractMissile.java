@@ -1,7 +1,7 @@
 package de.morgon.missile.events;
 
-import de.morgon.missile.HashMaps.PlayerEntityMap;
-import de.morgon.missile.events.Inventories.openInventories.missileI1;
+import de.morgon.missile.maps.PlayerEntityMap;
+import de.morgon.missile.inventories.openInventories.missileI1;
 
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;

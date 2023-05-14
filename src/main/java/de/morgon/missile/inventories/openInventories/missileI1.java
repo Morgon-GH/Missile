@@ -1,12 +1,17 @@
-package de.morgon.missile.events.Inventories.openInventories;
+package de.morgon.missile.inventories.openInventories;
 
-import de.morgon.missile.events.Inventories.inventoryHolder.MenuHolder1;
+import de.morgon.missile.maps.PlayerEntityMap;
+import de.morgon.missile.maps.MissileGunpowderMap;
+import de.morgon.missile.inventories.holder.MenuHolder1;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class missileI1 {
     public void open(Player player){
@@ -36,6 +41,15 @@ public class missileI1 {
         ItemStack power = new ItemStack(Material.GUNPOWDER);
         ItemMeta powerM = power.getItemMeta();
         powerM.setDisplayName("Load Gunpowder");
+        List<String> powerL = new ArrayList<String>();
+
+        if(MissileGunpowderMap.get(PlayerEntityMap.get(player)) != null) {
+            powerL.add("Current power: " + MissileGunpowderMap.get(PlayerEntityMap.get(player)) + " Gunpowder");
+        }else{
+            powerL.add("Current power: 0 Gunpowder");
+        }
+
+        powerM.setLore(powerL);
         power.setItemMeta(powerM);
 
         for(int i = 0; i < 10; i++){

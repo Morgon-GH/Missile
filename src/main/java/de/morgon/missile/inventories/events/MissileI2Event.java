@@ -1,9 +1,10 @@
-package de.morgon.missile.events.Inventories.events;
+package de.morgon.missile.inventories.events;
 
-import de.morgon.missile.HashMaps.MissileGunpowderMap;
-import de.morgon.missile.HashMaps.PlayerEntityMap;
-import de.morgon.missile.events.Inventories.inventoryHolder.MenuHolder2;
-import de.morgon.missile.events.Inventories.openInventories.missileI1;
+import de.morgon.missile.configs.MissilePowerConfig;
+import de.morgon.missile.maps.MissileGunpowderMap;
+import de.morgon.missile.maps.PlayerEntityMap;
+import de.morgon.missile.inventories.holder.MenuHolder2;
+import de.morgon.missile.inventories.openInventories.missileI1;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -45,7 +46,7 @@ public class MissileI2Event implements Listener {
 
                     sum = sum - 9;
 
-                    MissileGunpowderMap.set(missile, sum);
+                    MissilePowerConfig.get().set(String.valueOf(missile.getUniqueId()), "hi");
 
                     missileI1.open(p);
 

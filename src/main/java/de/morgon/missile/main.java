@@ -1,9 +1,10 @@
 package de.morgon.missile;
 
 import de.morgon.missile.commands.*;
+import de.morgon.missile.configs.MissilePowerConfig;
 import de.morgon.missile.events.InteractMissile;
-import de.morgon.missile.events.Inventories.events.MissileI1Event;
-import de.morgon.missile.events.Inventories.events.MissileI2Event;
+import de.morgon.missile.inventories.events.MissileI1Event;
+import de.morgon.missile.inventories.events.MissileI2Event;
 import de.morgon.missile.events.UseMissileItem;
 import de.morgon.missile.recipes.MissileRecipe;
 import org.bukkit.Bukkit;
@@ -42,6 +43,17 @@ public final class main extends JavaPlugin {
 
         logger.info("[Missile] Recipes loaded successfully");
 
+        logger.info("[Missile] Loading Configs");
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+        //TODO Config geht nicht
+
+        MissilePowerConfig.setup();
+        MissilePowerConfig.save();
+        MissilePowerConfig.get().options().copyDefaults(true);
+
+        logger.info("[Missile] Configs loaded successfully");
     }
 
     @Override
