@@ -1,5 +1,6 @@
 package de.morgon.missile.inventories.openInventories;
 
+import de.morgon.missile.configs.MissilePowerConfig;
 import de.morgon.missile.maps.PlayerEntityMap;
 import de.morgon.missile.maps.MissileGunpowderMap;
 import de.morgon.missile.inventories.holder.MenuHolder1;
@@ -43,8 +44,8 @@ public class missileI1 {
         powerM.setDisplayName("Load Gunpowder");
         List<String> powerL = new ArrayList<String>();
 
-        if(MissileGunpowderMap.get(PlayerEntityMap.get(player)) != null) {
-            powerL.add("Current power: " + MissileGunpowderMap.get(PlayerEntityMap.get(player)) + " Gunpowder");
+        if(MissilePowerConfig.get().get(String.valueOf(PlayerEntityMap.get(player).getUniqueId())) != null) {
+            powerL.add("Current power: " + MissilePowerConfig.get().get(String.valueOf(PlayerEntityMap.get(player).getUniqueId())) + " Gunpowder");
         }else{
             powerL.add("Current power: 0 Gunpowder");
         }

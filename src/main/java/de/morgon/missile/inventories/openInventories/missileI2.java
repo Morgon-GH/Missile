@@ -30,10 +30,11 @@ public class missileI2 {
         confirmM.setDisplayName("Confirm");
         confirm.setItemMeta(confirmM);
 
-        try {
-            ItemStack gunpowder = new ItemStack(Material.GUNPOWDER, MissilePowerConfig.get().getInt(String.valueOf(missile.getUniqueId())));
-        }catch (Exception noGunpowder){
-            ItemStack gunpowder = new ItemStack(Material.GUNPOWDER, 0);
+        int amount = MissilePowerConfig.get().getInt(String.valueOf(missile.getUniqueId()));
+
+        for (int i = 0; i < 9; i++){
+            power.setItem(i, new ItemStack(Material.GUNPOWDER, amount));
+            amount = amount - 64;
         }
 
         for(int i = 9; i < 17; i++){
