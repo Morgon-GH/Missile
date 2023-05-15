@@ -46,7 +46,8 @@ public class MissileI2Event implements Listener {
 
                     sum = sum - 9;
 
-                    MissilePowerConfig.get().set(String.valueOf(missile.getUniqueId()), "hi");
+                    MissilePowerConfig.get().set(String.valueOf(missile.getUniqueId()), sum);
+                    MissilePowerConfig.save();
 
                     missileI1.open(p);
 
