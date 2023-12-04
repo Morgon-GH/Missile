@@ -11,18 +11,16 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.EulerAngle;
 
 public class Missile {
+    public Missile() {
+    }
 
-    public void summon(Player player, Location location){
-
-        EulerAngle angle = new EulerAngle(0, 0, 0);
-
-        ArmorStand missile = (ArmorStand) player.getWorld().spawnEntity(location, EntityType.ARMOR_STAND);
-
-        ItemStack missileT = new ItemStack(Material.PAPER);     //missileTexture
-        ItemMeta missileTM = missileT.getItemMeta();            //missileTextureMeta
+    public void summon(Player player, Location location) {
+        EulerAngle angle = new EulerAngle(0.0, 0.0, 0.0);
+        ArmorStand missile = (ArmorStand)player.getWorld().spawnEntity(location, EntityType.ARMOR_STAND);
+        ItemStack missileT = new ItemStack(Material.PAPER);
+        ItemMeta missileTM = missileT.getItemMeta();
         missileTM.setCustomModelData(1);
         missileT.setItemMeta(missileTM);
-
         missile.addScoreboardTag("missile");
         missile.setInvisible(true);
         missile.setBasePlate(false);

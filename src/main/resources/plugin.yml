@@ -1,5 +1,5 @@
 name: Missile
-version: '${project.version}'
+version: '1.0-SNAPSHOT'
 main: de.morgon.missile.main
 api-version: 1.19
 prefix: [Missile]
@@ -8,3 +8,5 @@ description: Adds a working missile to minecraft
 commands:
   SpawnMissile:
     description: Spawns a missile at the players location or the provided coordinates
+  test:
+    description: test
