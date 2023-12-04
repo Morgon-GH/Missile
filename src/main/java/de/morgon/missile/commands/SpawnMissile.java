@@ -1,6 +1,7 @@
 package de.morgon.missile.commands;
 
 import de.morgon.missile.Message;
+import de.morgon.missile.maps.MissileActiveMap;
 import de.morgon.missile.summons.Missile;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -10,8 +11,6 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class SpawnMissile implements CommandExecutor {
-    public SpawnMissile() {
-    }
 
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Message message = new Message();

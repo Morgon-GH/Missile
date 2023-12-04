@@ -1,5 +1,6 @@
 package de.morgon.missile.inventories.events;
 
+import de.morgon.missile.Fly;
 import de.morgon.missile.configs.MissileSaves;
 import de.morgon.missile.inventories.holder.MenuHolder1;
 import de.morgon.missile.inventories.openInventories.MissileI2;
@@ -15,8 +16,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class MissileI1Event implements Listener {
-    public MissileI1Event() {
-    }
 
     @EventHandler
     public void onClickMissile(InventoryClickEvent e) {
@@ -45,6 +44,12 @@ public class MissileI1Event implements Listener {
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§aSet target")) {
                     MissileI3 missileI3 = new MissileI3();
                     missileI3.open(p);
+                } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§4LAUNCH")) {
+                    p.sendMessage("LAUNCH");
+                    p.closeInventory();
+
+                    Fly fly = new Fly();
+                    fly.launch(p);
                 }
             }
         } catch (Exception var7) {

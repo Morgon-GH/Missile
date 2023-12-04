@@ -14,8 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class MissileI4 {
-    public MissileI4() {
-    }
 
     public void open(Player p) {
         Entity missile = PlayerEntityMap.get(p);

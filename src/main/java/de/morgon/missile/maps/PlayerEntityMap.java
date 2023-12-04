@@ -8,8 +8,6 @@ import org.bukkit.entity.Player;
 public class PlayerEntityMap {
     public static Map<Player, Entity> playerEntityMap = new HashMap();
 
-    public PlayerEntityMap() {
-    }
 
     public static void set(Player player, Entity missile) {
         playerEntityMap.put(player, missile);

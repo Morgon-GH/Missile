@@ -21,8 +21,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class main extends JavaPlugin {
-    public main() {
-    }
+
+    private static main plugin;
 
     public void onEnable() {
         Logger logger = Bukkit.getLogger();
@@ -57,4 +57,9 @@ public final class main extends JavaPlugin {
 
     public void onDisable() {
     }
+
+    public static main getPlugin() {
+        return plugin;
+    }
+
 }

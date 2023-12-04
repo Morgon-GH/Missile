@@ -12,8 +12,6 @@ public class MissileSaves {
     private static File file;
     private static FileConfiguration customFile;
 
-    public MissileSaves() {
-    }
 
     public static void setup() {
         file = new File(((Plugin)Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("Missile"))).getDataFolder(), "MissileSaves.yml");

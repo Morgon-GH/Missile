@@ -7,9 +7,6 @@ import org.bukkit.entity.Player;
 public class PlayerInputMap {
     public static Map<Player, String> playerInputMap = new HashMap();
 
-    public PlayerInputMap() {
-    }
-
     public static void set(Player player, String coord) {
         playerInputMap.put(player, coord);
     }

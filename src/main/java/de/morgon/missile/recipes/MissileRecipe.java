@@ -8,8 +8,6 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class MissileRecipe {
-    public MissileRecipe() {
-    }
 
     public static void register(NamespacedKey key) {
         ItemStack missileItem = new ItemStack(Material.PAPER);

@@ -10,8 +10,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class UseMissileItem implements Listener {
-    public UseMissileItem() {
-    }
 
     @EventHandler
     public void onUseMissile(PlayerInteractEvent e) {

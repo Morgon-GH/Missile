@@ -11,8 +11,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 
 public class CloseGunpowderInv implements Listener {
-    public CloseGunpowderInv() {
-    }
 
     @EventHandler
     public void onCloseInv(InventoryCloseEvent e) {

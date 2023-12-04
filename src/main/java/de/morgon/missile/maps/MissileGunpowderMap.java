@@ -9,9 +9,6 @@ import org.jetbrains.annotations.NotNull;
 public class MissileGunpowderMap {
     public static Map<Entity, Integer> MissileGunpowder = new HashMap();
 
-    public MissileGunpowderMap() {
-    }
-
     public static void set(Entity missile, int amount) {
         MissileGunpowder.put(missile, amount);
     }

@@ -13,8 +13,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
 public class MissileI2Event implements Listener {
-    public MissileI2Event() {
-    }
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {

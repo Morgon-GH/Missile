@@ -11,8 +11,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.EulerAngle;
 
 public class Missile {
-    public Missile() {
-    }
 
     public void summon(Player player, Location location) {
         EulerAngle angle = new EulerAngle(0.0, 0.0, 0.0);
@@ -28,5 +26,6 @@ public class Missile {
         missile.setSmall(false);
         missile.setRightArmPose(angle);
         missile.setItem(EquipmentSlot.HAND, missileT);
+        missile.setGravity(false);
     }
 }

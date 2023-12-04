@@ -8,8 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class MissileI4Event implements Listener {
-    public MissileI4Event() {
-    }
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {

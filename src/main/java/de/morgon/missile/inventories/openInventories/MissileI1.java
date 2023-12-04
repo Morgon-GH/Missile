@@ -15,8 +15,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class MissileI1 {
-    public MissileI1() {
-    }
 
     public void open(Player player) {
         Inventory missileI1 = Bukkit.createInventory(new MenuHolder1(), 27, "Configure Missile");

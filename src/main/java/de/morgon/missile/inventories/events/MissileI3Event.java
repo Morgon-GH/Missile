@@ -11,8 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class MissileI3Event implements Listener {
-    public MissileI3Event() {
-    }
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {
