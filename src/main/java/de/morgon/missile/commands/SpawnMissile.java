@@ -1,7 +1,6 @@
 package de.morgon.missile.commands;
 
 import de.morgon.missile.Message;
-import de.morgon.missile.maps.MissileActiveMap;
 import de.morgon.missile.summons.Missile;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -13,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 public class SpawnMissile implements CommandExecutor {
 
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        Message message = new Message();
         Missile missile = new Missile();
         if (commandSender instanceof Player) {
             Player p = (Player)commandSender;
@@ -24,11 +22,11 @@ public class SpawnMissile implements CommandExecutor {
                     Location location = new Location(p.getWorld(), Double.parseDouble(strings[0]) + 0.5, Double.parseDouble(strings[1]) + 0.5, Double.parseDouble(strings[2]) + 0.5);
                     missile.summon(p, location);
                 } catch (Exception var9) {
-                    message.WrongInputTypeError(p);
+                    Message.WrongInputTypeError(p);
                 }
             }
         } else {
-            message.ConsoleCantExecuteError(commandSender);
+            Message.ConsoleCantExecuteError(commandSender);
         }
 
         return false;
