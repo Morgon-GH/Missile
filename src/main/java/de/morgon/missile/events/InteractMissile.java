@@ -14,7 +14,7 @@ public class InteractMissile implements Listener {
 
     @EventHandler
     public void onInteractMissile(PlayerInteractAtEntityEvent e) {
-        if (e.getRightClicked() instanceof ArmorStand && e.getRightClicked().getScoreboardTags().contains("missile") && MissileActiveMap.get(e.getRightClicked()) == false) {
+        if (e.getRightClicked() instanceof ArmorStand && e.getRightClicked().getScoreboardTags().contains("missile")) {
             e.setCancelled(true);
             ArmorStand missile = (ArmorStand)e.getRightClicked();
             Player p = e.getPlayer();

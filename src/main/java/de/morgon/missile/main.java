@@ -25,6 +25,9 @@ public final class main extends JavaPlugin {
     private static main plugin;
 
     public void onEnable() {
+
+        plugin = this;
+
         Logger logger = Bukkit.getLogger();
         logger.info("[Missile] Starting up plugin");
         logger.info("[Missile] Loading commands...");

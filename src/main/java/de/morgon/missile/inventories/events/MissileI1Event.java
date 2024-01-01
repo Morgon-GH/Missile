@@ -45,11 +45,9 @@ public class MissileI1Event implements Listener {
                     MissileI3 missileI3 = new MissileI3();
                     missileI3.open(p);
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§4LAUNCH")) {
-                    p.sendMessage("LAUNCH");
                     p.closeInventory();
 
-                    Fly fly = new Fly();
-                    fly.launch(p);
+                    Fly.launch(p);
                 }
             }
         } catch (Exception var7) {
