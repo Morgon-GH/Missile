@@ -20,6 +20,8 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static de.morgon.missile.ItemHandler.createItems;
+
 public final class main extends JavaPlugin {
 
     private static main plugin;
@@ -30,9 +32,11 @@ public final class main extends JavaPlugin {
 
         Logger logger = Bukkit.getLogger();
         logger.info("[Missile] Starting up plugin");
+
         logger.info("[Missile] Loading commands...");
         ((PluginCommand)Objects.requireNonNull(this.getCommand("SpawnMissile"))).setExecutor(new SpawnMissile());
         logger.info("[Missile] Commands loaded successfully");
+
         logger.info("[Missile] Loading Event listeners");
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new UseMissileItem(), this);
@@ -45,10 +49,14 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new EnterPlayer(), this);
         pluginManager.registerEvents(new CloseGunpowderInv(), this);
         logger.info("[Missile] Listeners loaded successfully");
-        logger.info("[Missile] Loading Recipes");
+
+        logger.info("[Missile] Loading Items and Recipes");
+        createItems();
+
         NamespacedKey keyMissile = new NamespacedKey(this, "missile");
         MissileRecipe.register(keyMissile);
         logger.info("[Missile] Recipes loaded successfully");
+
         logger.info("[Missile] Loading Configs");
         this.getConfig().options().copyDefaults();
         this.saveDefaultConfig();
@@ -56,6 +64,9 @@ public final class main extends JavaPlugin {
         MissileSaves.save();
         MissileSaves.get().options().copyDefaults(true);
         logger.info("[Missile] Configs loaded successfully");
+
+        logger.info("[Missile] Plugin loaded successfully");
+
     }
 
     public void onDisable() {

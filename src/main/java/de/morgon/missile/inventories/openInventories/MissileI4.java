@@ -13,43 +13,49 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import static de.morgon.missile.ItemHandler.CLEAR;
+
 public class MissileI4 {
 
     public void open(Player p) {
         Entity missile = PlayerEntityMap.get(p);
         Inventory targetCords = Bukkit.createInventory(new MenuHolder4(), 27, "Input Coordinates");
-        ItemStack clear = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta clearM = clear.getItemMeta();
-        clearM.setDisplayName(" ");
-        clear.setItemMeta(clearM);
+
+
         ArrayList<String> loreX = new ArrayList();
-        loreX.add(ChatColor.DARK_PURPLE + "Set to: " + MissileSaves.get().get(missile.getUniqueId() + ".Target.X"));
+        if (MissileSaves.get().get(missile.getUniqueId() + ".Target.X") != null) {
+            loreX.add(ChatColor.DARK_PURPLE + "Set to: " + MissileSaves.get().get(missile.getUniqueId() + ".Target.X"));
+        } else
+            loreX.add(ChatColor.DARK_PURPLE + "X not set");
         ItemStack X = new ItemStack(Material.ARROW);
-        ItemMeta XM = clear.getItemMeta();
+        ItemMeta XM = X.getItemMeta();
         XM.setDisplayName("§7Set X");
         XM.setLore(loreX);
         X.setItemMeta(XM);
         ArrayList<String> loreZ = new ArrayList();
-        loreZ.add(ChatColor.DARK_PURPLE + "Set to: " + MissileSaves.get().get(missile.getUniqueId() + ".Target.Z"));
+        if (MissileSaves.get().get(missile.getUniqueId() + ".Target.Z") != null) {
+            loreZ.add(ChatColor.DARK_PURPLE + "Set to: " + MissileSaves.get().get(missile.getUniqueId() + ".Target.Z"));
+        } else
+            loreZ.add(ChatColor.DARK_PURPLE + "Z not set");
         ItemStack Z = new ItemStack(Material.ARROW);
-        ItemMeta ZM = clear.getItemMeta();
+        ItemMeta ZM = Z.getItemMeta();
         ZM.setDisplayName("§7Set Z");
         ZM.setLore(loreZ);
         Z.setItemMeta(ZM);
 
         int i;
         for(i = 0; i <= 10; ++i) {
-            targetCords.setItem(i, clear);
+            targetCords.setItem(i, CLEAR);
         }
 
         targetCords.setItem(11, X);
-        targetCords.setItem(12, clear);
-        targetCords.setItem(13, clear);
-        targetCords.setItem(14, clear);
+        targetCords.setItem(12, CLEAR);
+        targetCords.setItem(13, CLEAR);
+        targetCords.setItem(14, CLEAR);
         targetCords.setItem(15, Z);
 
         for(i = 16; i <= 26; ++i) {
-            targetCords.setItem(i, clear);
+            targetCords.setItem(i, CLEAR);
         }
 
         p.openInventory(targetCords);

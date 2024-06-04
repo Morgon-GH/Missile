@@ -15,6 +15,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import static de.morgon.missile.ItemHandler.BASIC_MISSILE_ITEM;
+
 public class MissileI1Event implements Listener {
 
     @EventHandler
@@ -25,15 +27,10 @@ public class MissileI1Event implements Listener {
                 e.setCancelled(true);
                 if (e.getCurrentItem().getType() == Material.BARRIER) {
                     Entity missile = PlayerEntityMap.get(p);
-                    ItemStack missileItem = new ItemStack(Material.PAPER);
-                    ItemMeta missileItemM = missileItem.getItemMeta();
-                    missileItemM.setCustomModelData(2);
-                    missileItemM.setDisplayName("§oMissile");
-                    missileItem.setItemMeta(missileItemM);
                     ItemStack gunpowder = new ItemStack(Material.GUNPOWDER, (Integer)MissileSaves.get().get(missile.getUniqueId() + ".Power"));
                     p.getInventory().addItem(new ItemStack[]{gunpowder});
                     missile.remove();
-                    p.getInventory().addItem(new ItemStack[]{missileItem});
+                    p.getInventory().addItem(new ItemStack[]{BASIC_MISSILE_ITEM});
                     p.closeInventory();
                     PlayerEntityMap.remove(p);
                     MissileSaves.get().set(String.valueOf(missile.getUniqueId()), (Object)null);

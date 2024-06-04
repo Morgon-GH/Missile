@@ -1,7 +1,7 @@
 package de.morgon.missile.commands;
 
 import de.morgon.missile.Message;
-import de.morgon.missile.summons.Missile;
+import de.morgon.missile.summons.BasicMissile;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class SpawnMissile implements CommandExecutor {
 
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        Missile missile = new Missile();
+        BasicMissile missile = new BasicMissile();
         if (commandSender instanceof Player) {
             Player p = (Player)commandSender;
             if (strings.length == 0) {
