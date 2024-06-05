@@ -24,7 +24,7 @@ public class ItemHandler {
 
     static void createBasicMissileItem(){
         ItemMeta meta = BASIC_MISSILE_ITEM.getItemMeta();
-        meta.setDisplayName("§oBasic Missile");
+        meta.setDisplayName("Basic Missile");
         meta.setCustomModelData(2);
         BASIC_MISSILE_ITEM.setItemMeta(meta);
     }
