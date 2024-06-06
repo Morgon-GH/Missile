@@ -98,7 +98,7 @@ public class Fly {
 
         }
 
-        float speed = 0.2f;
+        float speed = 0.5f;
 
         long reps = (long) (distance / speed);
 
@@ -106,25 +106,37 @@ public class Fly {
 
             int finalI = i;
 
+            double Xspeed = Math.sin(a) * speed;
+            double Zspeed = Math.cos(a) * speed;
+
+
             new BukkitRunnable() {
                 @Override
                 public void run() {
 
-                    double Xspeed = Math.sin(a) * speed;
-                    double Zspeed = Math.cos(a) * speed;
-
-                    Bukkit.broadcastMessage("a = " + a + " Xspeed = " + Xspeed + " Zspeed = " + Zspeed);
-
 
                     missile.teleport(new Location(missile.getWorld(), start.getX() + Xspeed * finalI, missile.getLocation().getY() , start.getZ() + Zspeed * finalI, (float) (a * 180 / Math.PI - 90), 0));
 
-                    if (missile.getLocation().getBlock().getBlockData().getMaterial() != Material.AIR || missile.getLocation().getBlock().getBlockData().getMaterial() != Material.CAVE_AIR) {
-                        cancel();
-
-                    }
-
                 }
             }.runTaskLater(main.getPlugin(), (long) (i + 48));
+
+            if (!String.valueOf(new Location(missile.getWorld(), start.getX() + Xspeed * finalI, missile.getLocation().getY() , start.getZ() + Zspeed * finalI).getBlock().getBlockData().getMaterial()).equals("AIR")) {
+
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+
+                        Bukkit.broadcastMessage("Missile hit a block");
+
+                        missile.getWorld().createExplosion(missile.getLocation(), 4);
+                        missile.remove();
+
+                    }
+                }.runTaskLater(main.getPlugin(), (long) (i + 48));
+
+                break;
+
+            }
 
         }
 
